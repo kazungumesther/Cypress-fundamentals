@@ -1,50 +1,79 @@
-What I Learned
-Test Structure
-I learned how to organize tests using describe() and it(), and how to use hooks such as before(), beforeEach(), after(), and afterEach() to prepare and clean up test environments.
+# Cypress Automation Fundamentals Assignment
 
-Assertions
-I learned how to verify expected results using should() and expect(). These assertions help confirm that elements exist, are visible, contain the correct text, or have the expected values and attributes.
+A structured end-to-end (E2E) test automation project built using the **Cypress** framework. This repository contains a series of test suites designed to practice, validate, and document fundamental automation engineering patterns, concluding with an integrated mini-project.
 
-Basic Cypress Commands
-I practiced using common commands such as:
-cy.visit()
-cy.get()
-cy.type()
-cy.click()
-cy.clear()
-cy.select()
-cy.scrollIntoView()
-These commands simulate user interactions with web applications.
+## What I Learned & Implemented
 
-Locators
-I learned different ways of locating web elements using:
-cy.get()
-cy.contains()
-.find()
-.parent()
-.children()
-.closest()
-.first()
-.last()
-.eq()
-.within()
-I also learned why IDs and data-cy attributes are preferred over long CSS selectors because they make tests more stable and easier to maintain.
+### 1. Test Architecture & Hooks
+*   **Test Organization:** Structured tests logically using `describe()` blocks for test suites and `it()` blocks for atomic test cases.
+*   **Lifecycle Hooks:** Implemented `before()`, `beforeEach()`, `after()`, and `afterEach()` hooks to establish reliable test states, handle preconditions, and execute clean tear-down procedures.
 
-Working with Elements
-I practiced interacting with buttons, text fields, password fields, checkboxes, radio buttons, dropdown menus, text areas, links, and images.
+### 2. Assertions & Validations
+*   Used both implicit assertions (`should()`, `and()`) and explicit assertions (`expect()`) to build strict validation checkpoints.
+*   Verified element existence, UI visibility, precise text matches, input values, and specific HTML DOM attributes.
 
-Forms
-I learned how to automate filling out forms, selecting options, submitting data, and verifying successful form submissions.
+### 3. Core Cypress Commands & Interactions
+*   Simulated realistic user journeys using core commands: `cy.visit()`, `cy.get()`, `cy.type()`, `cy.click()`, `cy.clear()`, and `cy.select()`.
+*   Handled scrolling actions using `cy.scrollIntoView()` to unlock lazy-loaded elements on long webpages.
 
-Tables
-I learned how to count rows and columns, read table data, verify table contents, and interact with elements inside table rows.
+### 4. Robust Locator Strategies
+*   Traversed and selected targeted elements using specialized traversal commands: `.find()`, `.parent()`, `.children()`, `.closest()`, `.first()`, `.last()`, `.eq()`, and `.within()`.
+*   Prioritized stable identifiers like custom `data-cy` attributes and `id` properties over long, fragile CSS selectors to prevent flaky tests.
 
-Browser and Keyboard Interactions
-I explored browser navigation, page reloads, alerts, confirmation dialogs, and keyboard actions such as Enter, Escape, Backspace, Delete, and arrow keys.
+### 5. Advanced UI Element Interactions
+*   **Web Forms:** Automated interactive input fields, hidden password targets, checkboxes, radio selections, multi-select dropdown menus, and validation messages upon form submission.
+*   **Data Tables:** Parsed dynamic grids to count columns and rows, read inner index data, and directly trigger buttons nested inside specific table rows.
+*   **Browser & OS Simulation:** Tested native browser alerts, confirmation boxes, window reloads, and custom keyboard keystrokes (`Enter`, `Escape`, `Backspace`, arrow keys).
+*   **File Uploads:** Integrated file handling plugins to upload documents seamlessly through target input forms.
 
-Scrolling and File Upload
-I learned how to scroll to different sections of a page and upload files using Cypress.
+### 6. Capstone Mini-Project
+*   Combined all the independent automation skills into a single, cohesive end-to-end test script.
+*   Modeled a real-world user workflow requiring asynchronous steps, continuous state management, complex assertions, and layered structural hooks.
 
-Mini Project
-The mini project allowed me to combine multiple Cypress concepts into one complete automation test. It helped me understand how to structure a real-world automated test using hooks, commands, assertions, and element interactions.
+---
 
+## Directory Layout
+
+```text
+cypress-fundamental-assignment/
+├── cypress/
+│   ├── e2e/               # Test suites covering specific features
+│   ├── fixtures/          # Mock data files (JSON)
+│   └── support/           # Custom commands and global configuration configurations
+├── node_modules/          # Local npm dependencies
+├── cypress.config.js      # Global Cypress configuration configuration file
+├── package.json           # Project manifest and execution script parameters
+└── README.md              # Project documentation
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org) installed locally.
+
+### Installation
+1. Clone this repository:
+   ```bash
+   git clone https://github.com
+   cd cypress-fundamental-assignment
+   ```
+
+2. Install the necessary project dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Tests
+
+You can run the automation tests using either the interactive runner or headless command-line interface mode:
+
+*   **Open Cypress Test Runner (UI Mode):**
+    ```bash
+    npx cypress open
+    ```
+*   **Run All Tests (Headless Mode):**
+    ```bash
+    npx cypress run
+    ```
